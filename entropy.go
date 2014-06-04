@@ -35,7 +35,7 @@ func NewEstimate(k int) *Sketch {
 // Push adds element b to the stream dt times.
 func (s *Sketch) Push(b []byte, dt int) {
 
-	it := spooky.Hash64(b, 0)
+	it := spooky.Hash64(b)
 
 	// Line 4
 	s.Y += dt
