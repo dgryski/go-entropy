@@ -23,6 +23,10 @@ func main() {
 		sk.Push(scanner.Bytes(), 1)
 	}
 
+	if err := scanner.Err(); err != nil {
+		fmt.Println("error during scan: ", err)
+	}
+
 	fmt.Println("entropy :", ex.Entropy())
 	fmt.Println("estimate:", sk.Entropy())
 }
